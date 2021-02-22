@@ -17,8 +17,9 @@ if __name__ == '__main__':
     
     pynvml.nvmlInit()
     while 1:
-        for i in range(pynvml.nvmlDeviceGetCount()):
-            handle = pynvml.nvmlDeviceGetHandleByIndex(1)
+        deviceNum = pynvml.nvmlDeviceGetCount()
+        for i in range(deviceNum):
+            handle = pynvml.nvmlDeviceGetHandleByIndex(i)
             meminfo = pynvml.nvmlDeviceGetMemoryInfo(handle)
             total = meminfo.total/ratio
             used = meminfo.used/ratio
@@ -30,11 +31,11 @@ if __name__ == '__main__':
                     del x
                     for _ in tqdm(range(60)):
                         time.sleep(1)
-                else:
-                    localtime = time.asctime(time.localtime(time.time()))
-                    print(f"your code started at {localtime}")
-                    os.environ["CUDA_DEVICE_ORDER"]= f"{i}"
-                    os.system(args.code)
-                    localtime = time.asctime(time.localtime(time.time()))
-                    print(f"done at:{localtime}" )
-                    exit(0)
+            
+                localtime = time.asctime(time.localtime(time.time()))
+                print(f"your code started at {localtime}")
+                os.environ["CUDA_DEVICE_ORDER"]= f"{i}"
+                os.system(args.code)
+                localtime = time.asctime(time.localtime(time.time()))
+                print(f"done at:{localtime}" )
+                exit(0)
