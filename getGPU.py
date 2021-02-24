@@ -34,7 +34,7 @@ if __name__ == '__main__':
             
                 localtime = time.asctime(time.localtime(time.time()))
                 print(f"your code started at {localtime}")
-                os.environ["CUDA_DEVICE_ORDER"]= f"{i}"
+                os.environ["CUDA_VISIBLE_DEVICES"]= f"{i}"
                 os.system(args.code)
                 localtime = time.asctime(time.localtime(time.time()))
                 print(f"done at:{localtime}" )
