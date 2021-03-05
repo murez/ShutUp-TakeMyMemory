@@ -6,6 +6,9 @@
        
 Get Your GPU InTime
 
+If you have some problem, make issues and PR is welcomed!
+
+
 optional arguments:
 ```
   -h, --help          show this help message and exit
@@ -18,4 +21,6 @@ optional arguments:
 ```
 
 
+## TODO
 
+using a config file to read in the codes and more functions
