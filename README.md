@@ -6,7 +6,7 @@
        
 Get Your GPU InTime
 
-If you have some problem, make issues and PR is welcomed!
+If you have some problems, make issues and PR is welcomed!
 
 
 optional arguments:
